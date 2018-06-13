@@ -26,4 +26,26 @@ typedef enum : NSUInteger {
  */
 - (void)yx_setImageViewStyle:(ImageViewStyle)style imageSize:(CGSize)size space:(CGFloat)space;
 
+
+/**
+ *  设置倒计时按钮的样式
+ *
+ *  @param timeout    总时间
+ *  @param unitTitle     倒计时的单位
+ *  @param startColor 倒计时的颜色
+ *  @param endTitle 结束的文字
+ *  @param endColor 结束的颜色
+ */
+- (void)yx_setStartTime:(NSInteger)timeout unit:(NSString *)unitTitle startTitleColor:(UIColor *)startColor endTitle:(NSString *)endTitle endColor:(UIColor *)endColor;
+
+/**
+ * 开始倒计时
+ */
+- (void)yx_startTime;
+
+/**
+ * 取消倒计时
+ */
+- (void)yx_cancelTime;
+
 @end
