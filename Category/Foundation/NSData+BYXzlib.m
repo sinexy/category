@@ -111,7 +111,7 @@ static void *byx_zlibOpen()
 }
 
 // Adapted from http://www.zlib.net/zpipe.c
-- (BOOL)jk_deflate:(void (^)(NSData *))processBlock
+- (BOOL)byx_deflate:(void (^)(NSData *))processBlock
           error:(NSError *__autoreleasing *)error
 {
     void *libz = jk_zlibOpen();
