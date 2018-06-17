@@ -21,18 +21,18 @@ static void *byx_zlibOpen()
     return libz;
 }
 
-- (NSData *)jk_dataByInflatingWithError:(NSError *__autoreleasing *)error
+- (NSData *)byx_dataByInflatingWithError:(NSError *__autoreleasing *)error
 {
     if (![self length]) return [self copy];
     NSMutableData *outData = [NSMutableData data];
-    [self jk_inflate:^(NSData *toAppend) {
+    [self byx_inflate:^(NSData *toAppend) {
         [outData appendData:toAppend];
     }
             error:error];
     return outData;
 }
 
-- (NSData *)jk_dataByDeflatingWithError:(NSError *__autoreleasing *)error
+- (NSData *)byx_dataByDeflatingWithError:(NSError *__autoreleasing *)error
 {
     if (![self length]) return [self copy];
     NSMutableData *outData = [NSMutableData data];
@@ -44,10 +44,10 @@ static void *byx_zlibOpen()
 }
 
 // Adapted from http://www.zlib.net/zpipe.c
-- (BOOL)jk_inflate:(void (^)(NSData *))processBlock
+- (BOOL)byx_inflate:(void (^)(NSData *))processBlock
           error:(NSError *__autoreleasing *)error
 {
-    void *libz = jk_zlibOpen();
+    void *libz = byx_zlibOpen();
 //    int (*deflateInit2_)(z_streamp, int, int, int, int, int, const char *, int) =
 //    (int (*)(z_streamp, int, int, int, int, int, const char *, int))dlsym(libz, "deflateInit2_");
 //    int (*deflateInit_)(z_streamp, int, const char *, int) =
@@ -70,9 +70,9 @@ static void *byx_zlibOpen()
 
     int ret = inflateInit(&stream);
     if (ret != Z_OK) {
-        if (error) *error = [NSError errorWithDomain:JKZlibErrorDomain
-                                                code:JKZlibErrorCodeInflationError
-                                            userInfo:@{JKZlibErrorInfoKey : @(ret)}];
+        if (error) *error = [NSError errorWithDomain:BYXZlibErrorDomain
+                                                code:BYXZlibErrorCodeInflationError
+                                            userInfo:@{BYXZlibErrorInfoKey : @(ret)}];
         return NO;
     }
     Bytef *source = (Bytef *)[self bytes]; // yay
@@ -95,9 +95,9 @@ static void *byx_zlibOpen()
                 case Z_MEM_ERROR:
                 case Z_STREAM_ERROR:
                     inflateEnd(&stream);
-                    if (error) *error = [NSError errorWithDomain:JKZlibErrorDomain
-                                                            code:JKZlibErrorCodeInflationError
-                                                        userInfo:@{JKZlibErrorInfoKey : @(ret)}];
+                    if (error) *error = [NSError errorWithDomain:BYXZlibErrorDomain
+                                                            code:BYXZlibErrorCodeInflationError
+                                                        userInfo:@{BYXZlibErrorInfoKey : @(ret)}];
                     return NO;
             }
             processBlock([NSData dataWithBytesNoCopy:out
