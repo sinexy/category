@@ -114,7 +114,7 @@ static void *byx_zlibOpen()
 - (BOOL)byx_deflate:(void (^)(NSData *))processBlock
           error:(NSError *__autoreleasing *)error
 {
-    void *libz = jk_zlibOpen();
+    void *libz = byx_zlibOpen();
 //    int (*deflateInit2_)(z_streamp, int, int, int, int, int, const char *, int) =
 //    (int (*)(z_streamp, int, int, int, int, int, const char *, int))dlsym(libz, "deflateInit2_");
     int (*deflateInit_)(z_streamp, int, const char *, int) =
@@ -134,9 +134,9 @@ static void *byx_zlibOpen()
     int ret = deflateInit(&stream, 9);
     
     if (ret != Z_OK) {
-        if (error) *error = [NSError errorWithDomain:JKZlibErrorDomain
-                                                code:JKZlibErrorCodeDeflationError
-                                            userInfo:@{JKZlibErrorInfoKey : @(ret)}];
+        if (error) *error = [NSError errorWithDomain:BYXZlibErrorDomain
+                                                code:BYXZlibErrorCodeDeflationError
+                                            userInfo:@{BYXZlibErrorInfoKey : @(ret)}];
         return NO;
     }
     Bytef *source = (Bytef *)[self bytes]; // yay
