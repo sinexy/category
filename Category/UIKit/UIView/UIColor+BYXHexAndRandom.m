@@ -1,16 +1,16 @@
 //
-//  UIColor+YXCategory.m
+//  UIColor+BYXHexAndRandom.m
 //  CategoryDemo
 //
 //  Created by yunxin bai on 2018/6/8.
 //  Copyright © 2018年 yunxin bai. All rights reserved.
 //
 
-#import "UIColor+YXCategory.h"
+#import "UIColor+BYXHexAndRandom.h"
 
-@implementation UIColor (YXCategory)
+@implementation UIColor (BYXHexAndRandom)
 
-+ (instancetype)yx_colorWithHexString:(NSString *)hex
++ (instancetype)byx_colorWithHexString:(NSString *)hex
 {
     NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
@@ -44,7 +44,7 @@
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
 }
 
-+ (instancetype)yx_randomColor
++ (instancetype)byx_randomColor
 {
     CGFloat r = arc4random_uniform(255);
     CGFloat g = arc4random_uniform(255);

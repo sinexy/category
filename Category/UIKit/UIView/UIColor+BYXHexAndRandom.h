@@ -1,5 +1,5 @@
 //
-//  UIColor+YXCategory.h
+//  UIColor+BYXHexAndRandom.h
 //  CategoryDemo
 //
 //  Created by yunxin bai on 2018/6/8.
@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (YXCategory)
+@interface UIColor (BYXHexAndRandom)
 
 /**
  * @biref 将16进制颜色 转换为 RGB 颜色
  * @return UIColor
  */
-+ (instancetype)yx_colorWithHexString:(NSString *)hex;
++ (instancetype)byx_colorWithHexString:(NSString *)hex;
 
 /**
- * @biref 生成随机数
+ * @biref 生成随机颜色
  * @return UIColor
  */
-+ (instancetype)yx_randomColor;
++ (instancetype)byx_randomColor;
 
 @end
