@@ -6,7 +6,7 @@
 //  Copyright © 2018年 yunxin bai. All rights reserved.
 //
 
-#import "UIView+YXCategory.h"
+#import "UIView+BYXPosition.h"
 #import <objc/runtime.h>
 
 static char kActionHandlerTapBlockKey;
@@ -14,105 +14,105 @@ static char kActionHandlerTapGestureKey;
 static char kActionHandlerLongPressBlockKey;
 static char kActionHandlerLongPressGestureKey;
 
-@implementation UIView (YXCategory)
+@implementation UIView (BYXPosition)
 
-- (CGFloat)yx_minX
+- (CGFloat)byx_minX
 {
     return self.frame.origin.x;
 }
 
-- (void)setYx_minX:(CGFloat)yx_minX
+- (void)setByx_minX:(CGFloat)byx_minX
 {
     CGRect frame = self.frame;
-    frame.origin.x = yx_minX;
+    frame.origin.x = byx_minX;
     self.frame = frame;
 }
 
-- (CGFloat)yx_minY
+- (CGFloat)byx_minY
 {
     return self.frame.origin.y;
 }
 
-- (void)setYx_minY:(CGFloat)yx_minY
+- (void)setByx_minY:(CGFloat)byx_minY
 {
     CGRect frame = self.frame;
-    frame.origin.y = yx_minY;
+    frame.origin.y = byx_minY;
     self.frame = frame;
 }
 
-- (CGFloat)yx_maxX
+- (CGFloat)byx_maxX
 {
-    return self.yx_minX+self.yx_width;
+    return self.byx_minX+self.byx_width;
 }
 
-- (void)setYx_maxX:(CGFloat)yx_maxX
+- (void)setByx_maxX:(CGFloat)byx_maxX
 {
     CGRect frame = self.frame;
-    frame.size.width = yx_maxX-self.yx_minX;
+    frame.size.width = byx_maxX-self.byx_minX;
     self.frame = frame;
 }
 
-- (CGFloat)yx_maxY
+- (CGFloat)byx_maxY
 {
-    return self.yx_minY+self.yx_height;
+    return self.byx_minY+self.byx_height;
 }
 
-- (void)setYx_maxY:(CGFloat)yx_maxY
+- (void)setByx_maxY:(CGFloat)byx_maxY
 {
     CGRect frame = self.frame;
-    frame.size.height = yx_maxY-self.yx_minY;
+    frame.size.height = byx_maxY-self.byx_minY;
     self.frame = frame;
 }
 
-- (CGFloat)yx_width
+- (CGFloat)byx_width
 {
     return self.frame.size.width;
 }
 
-- (void)setYx_width:(CGFloat)yx_width
+- (void)setByx_width:(CGFloat)byx_width
 {
     CGRect frame = self.frame;
-    frame.size.width = yx_width;
+    frame.size.width = byx_width;
     self.frame = frame;
 }
 
-- (CGFloat)yx_height
+- (CGFloat)byx_height
 {
     return self.frame.size.height;
 }
 
-- (void)setYx_height:(CGFloat)yx_height
+- (void)setByx_height:(CGFloat)byx_height
 {
     CGRect frame = self.frame;
-    frame.size.height = yx_height;
+    frame.size.height = byx_height;
     self.frame = frame;
 }
 
-- (CGFloat)yx_centerX
+- (CGFloat)byx_centerX
 {
     return self.center.x;
 }
 
-- (void)setYx_centerX:(CGFloat)yx_centerX
+- (void)setByx_centerX:(CGFloat)byx_centerX
 {
     CGPoint center = self.center;
-    center.x = yx_centerX;
+    center.x = byx_centerX;
     self.center = center;
 }
 
-- (CGFloat)yx_centerY
+- (CGFloat)byx_centerY
 {
     return self.center.y;
 }
 
-- (void)setYx_centerY:(CGFloat)yx_centerY
+- (void)setByx_centerY:(CGFloat)byx_centerY
 {
     CGPoint center = self.center;
-    center.y = yx_centerY;
+    center.y = byx_centerY;
     self.center = center;
 }
 
-- (void)yx_setGradientLayerWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor
+- (void)byx_setGradientLayerWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor
 {
     [self layoutIfNeeded];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
@@ -125,7 +125,7 @@ static char kActionHandlerLongPressGestureKey;
     [self.layer addSublayer:gradientLayer];
 }
 
-- (BOOL)yx_isShowingOnKeyWindow
+- (BOOL)byx_isShowingOnKeyWindow
 {
     // 主窗口
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
@@ -140,7 +140,7 @@ static char kActionHandlerLongPressGestureKey;
     return !self.isHidden && self.alpha > 0.01 && self.window == keyWindow && intersects;
 }
 
-- (void)yx_addTapActionWithBlock:(YXGestureActionBlock)block
+- (void)byx_addTapActionWithBlock:(BYXGestureActionBlock)block
 {
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionHandlerTapGestureKey);
     if (!gesture)
@@ -164,7 +164,7 @@ static char kActionHandlerLongPressGestureKey;
     }
 }
 
-- (void)yx_addLongPressActionWithBlock:(YXGestureActionBlock)block
+- (void)byx_addLongPressActionWithBlock:(BYXGestureActionBlock)block
 {
     UILongPressGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionHandlerLongPressGestureKey);
     if (!gesture)
@@ -188,7 +188,7 @@ static char kActionHandlerLongPressGestureKey;
     }
 }
 
-- (UIImage *)yx_screenshot {
+- (UIImage *)byx_screenshot {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
     if( [self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)])
     {
