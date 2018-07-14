@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UILabel (YXCategory)
+@interface UILabel (BYXPadding)
 
 /**
  * 增加 label 行间距
