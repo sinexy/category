@@ -14,6 +14,6 @@
  * 增加 label 行间距
  * 实质是用 attribute
  */
-- (NSAttributedString *)yx_setAttributedString:(NSString *)string withLineSpace:(CGFloat)lineSpace;
+- (NSAttributedString *)byx_setAttributedString:(NSString *)string withLineSpace:(CGFloat)lineSpace;
 
 @end
