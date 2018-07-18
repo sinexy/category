@@ -15,7 +15,7 @@ typedef enum : NSUInteger {
     ImageViewStyleRight,
 } ImageViewStyle;
 
-@interface UIButton (YXCategory)
+@interface UIButton (BYXTime)
 
 /**
  设置 按钮 图片所在的位置
