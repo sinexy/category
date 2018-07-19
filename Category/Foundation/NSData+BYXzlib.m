@@ -3,12 +3,12 @@
 
 #import <zlib.h>
 #import <dlfcn.h>
-#import "NSData+JKzlib.h"
+#import "NSData+BYXzlib.h"
 
 static const uInt CHUNK_SIZE = 65536;
 
-NSString *const JKZlibErrorDomain = @"se.bitba.JKZlibErrorDomain";
-NSString *const JKZlibErrorInfoKey = @"zerror";
+NSString *const BYXZlibErrorDomain = @"se.bitba.BYXZlibErrorDomain";
+NSString *const BYXZlibErrorInfoKey = @"zerror";
 
 @implementation NSData (JKzlib)
 static void *jk_zlibOpen()
