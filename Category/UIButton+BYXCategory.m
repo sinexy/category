@@ -20,7 +20,7 @@ const static char *kStartTitleColor = "kStartTitleColor";
 const static char *kEndTitle = "kEndTitle";
 const static char *kEndColor = "kEndColor";
 
-@implementation UIButton (YXCategory)
+@implementation UIButton (BYXTime)
 
 - (void)yx_setImageViewStyle:(ImageViewStyle)style imageSize:(CGSize)size space:(CGFloat)space
 {
