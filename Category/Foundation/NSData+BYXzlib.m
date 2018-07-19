@@ -10,8 +10,8 @@ static const uInt CHUNK_SIZE = 65536;
 NSString *const BYXZlibErrorDomain = @"se.bitba.BYXZlibErrorDomain";
 NSString *const BYXZlibErrorInfoKey = @"zerror";
 
-@implementation NSData (JKzlib)
-static void *jk_zlibOpen()
+@implementation NSData (BYXzlib)
+static void *byx_zlibOpen()
 {
     static void *libz;
     static dispatch_once_t onceToken;
