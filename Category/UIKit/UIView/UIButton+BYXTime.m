@@ -6,7 +6,7 @@
 //  Copyright © 2018年 yunxin bai. All rights reserved.
 //
 
-#import "UIButton+YXCategory.h"
+#import "UIButton+BYXTime.h"
 #import <objc/runtime.h>
 
 static const char kButtonImageViewStyleKey;
