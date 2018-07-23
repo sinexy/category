@@ -22,7 +22,7 @@ const static char *kEndColor = "kEndColor";
 
 @implementation UIButton (BYXTime)
 
-- (void)yx_setImageViewStyle:(ImageViewStyle)style imageSize:(CGSize)size space:(CGFloat)space
+- (void)byx_setImageViewStyle:(ImageViewStyle)style imageSize:(CGSize)size space:(CGFloat)space
 {
     objc_setAssociatedObject(self, &kButtonImageViewStyleKey, @(style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, &kButtomImageSpaceKey, @(space), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -37,7 +37,7 @@ const static char *kEndColor = "kEndColor";
     method_exchangeImplementations(m1, m2);
 }
 
-- (void)yx_layoutSubviews
+- (void)byx_layoutSubviews
 {
     [self yx_layoutSubviews];
     
@@ -100,7 +100,7 @@ const static char *kEndColor = "kEndColor";
     }
 }
 
-- (void)yx_setStartTime:(NSInteger)timeout unit:(NSString *)unitTitle startTitleColor:(UIColor *)startColor endTitle:(NSString *)endTitle endColor:(UIColor *)endColor{
+- (void)byx_setStartTime:(NSInteger)timeout unit:(NSString *)unitTitle startTitleColor:(UIColor *)startColor endTitle:(NSString *)endTitle endColor:(UIColor *)endColor{
     objc_setAssociatedObject(self, kStartTime, @(timeout), OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(self, kUnit, unitTitle, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, kStartTitleColor, startColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -110,7 +110,7 @@ const static char *kEndColor = "kEndColor";
     
 }
 
--(void)yx_startTime{
+-(void)byx_startTime{
     
     NSInteger startTime = [objc_getAssociatedObject(self, kStartTime) integerValue]; //倒计时时间
     __block NSInteger timeOut = startTime;
@@ -139,7 +139,7 @@ const static char *kEndColor = "kEndColor";
     dispatch_resume(_timer);
 }
 
-- (void)yx_cancelTime
+- (void)byx_cancelTime
 {
     dispatch_source_t _timer = objc_getAssociatedObject(self, kTimerKey);
     if (_timer) {

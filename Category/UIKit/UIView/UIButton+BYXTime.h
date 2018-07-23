@@ -24,7 +24,7 @@ typedef enum : NSUInteger {
  @param size    图片的大小
  @param space 图片跟文字间的间距
  */
-- (void)yx_setImageViewStyle:(ImageViewStyle)style imageSize:(CGSize)size space:(CGFloat)space;
+- (void)byx_setImageViewStyle:(ImageViewStyle)style imageSize:(CGSize)size space:(CGFloat)space;
 
 
 /**
@@ -36,16 +36,16 @@ typedef enum : NSUInteger {
  *  @param endTitle 结束的文字
  *  @param endColor 结束的颜色
  */
-- (void)yx_setStartTime:(NSInteger)timeout unit:(NSString *)unitTitle startTitleColor:(UIColor *)startColor endTitle:(NSString *)endTitle endColor:(UIColor *)endColor;
+- (void)byx_setStartTime:(NSInteger)timeout unit:(NSString *)unitTitle startTitleColor:(UIColor *)startColor endTitle:(NSString *)endTitle endColor:(UIColor *)endColor;
 
 /**
  * 开始倒计时
  */
-- (void)yx_startTime;
+- (void)byx_startTime;
 
 /**
  * 取消倒计时
  */
-- (void)yx_cancelTime;
+- (void)byx_cancelTime;
 
 @end
