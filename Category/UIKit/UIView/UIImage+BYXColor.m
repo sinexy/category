@@ -6,7 +6,7 @@
 //  Copyright © 2018年 yunxin bai. All rights reserved.
 //
 
-#import "UIImage+Category.h"
+#import "UIImage+BYXColor.h"
 
 @implementation UIImage (Category)
 
