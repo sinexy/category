@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (Category)
+@interface UIImage (BYXColor)
 
 /**
  返回一张没有被渲染的图片
