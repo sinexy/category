@@ -8,7 +8,7 @@
 
 #import "UIImage+BYXColor.h"
 
-@implementation UIImage (Category)
+@implementation UIImage (BYXColor)
 
 + (instancetype)yx_imageWithOriginal:(NSString *)imageName{
     
