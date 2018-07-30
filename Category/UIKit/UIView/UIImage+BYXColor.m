@@ -10,7 +10,7 @@
 
 @implementation UIImage (BYXColor)
 
-+ (instancetype)yx_imageWithOriginal:(NSString *)imageName{
++ (instancetype)byx_imageWithOriginal:(NSString *)imageName{
     
     UIImage *image = [UIImage imageNamed:imageName];
     return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -18,7 +18,7 @@
 
 
 
-+ (instancetype)yx_imageWithColor:(UIColor *)color{
++ (instancetype)byx_imageWithColor:(UIColor *)color{
     
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
