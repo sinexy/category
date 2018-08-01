@@ -8,7 +8,7 @@
 
 #import "UIBarButtonItem+YXCategory.h"
 
-@implementation UIBarButtonItem (Category)
+@implementation UIBarButtonItem (BYXConstructor)
 
 + (instancetype)yx_itemWithImage:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action
 {

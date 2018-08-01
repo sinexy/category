@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIBarButtonItem (Category)
+@interface UIBarButtonItem (BYXConstructor)
 /**
  根据图片 快速创建一个UIBarButtonItem
  
