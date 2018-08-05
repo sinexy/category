@@ -18,7 +18,7 @@
  @param action SEL
  @return 返回UIBarButtonItem
  */
-+ (instancetype)yx_itemWithImage:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action;
++ (instancetype)byx_itemWithImage:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action;
 
 /**
  根据图片和文字 快速创建一个UIBarButtonItem
@@ -30,7 +30,7 @@
  @param title 名字
  @return 返回UIBarButtonItem
  */
-+ (instancetype)yx_itemWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title target:(id)target action:(SEL)action;
++ (instancetype)byx_itemWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title target:(id)target action:(SEL)action;
 
 /**
  根据文字 快速创建一个UIBarButtonItem
@@ -41,6 +41,6 @@
  @param action SE
  @return 返回UIBarButtonItem
  */
-+ (instancetype)yx_itemWithtitle:(NSString *)title normalColor:(UIColor *)normalColor highlightColor:(UIColor *)highlightColor target:(id)target action:(SEL)action;
++ (instancetype)byx_itemWithtitle:(NSString *)title normalColor:(UIColor *)normalColor highlightColor:(UIColor *)highlightColor target:(id)target action:(SEL)action;
 
 @end
