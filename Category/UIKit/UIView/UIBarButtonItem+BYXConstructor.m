@@ -10,7 +10,7 @@
 
 @implementation UIBarButtonItem (BYXConstructor)
 
-+ (instancetype)yx_itemWithImage:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action
++ (instancetype)byx_itemWithImage:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 40, 40);
@@ -24,7 +24,7 @@
     return [[UIBarButtonItem alloc] initWithCustomView:view];
 }
 
-+ (instancetype)yx_itemWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title target:(id)target action:(SEL)action
++ (instancetype)byx_itemWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title target:(id)target action:(SEL)action
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
@@ -42,7 +42,7 @@
     return [[UIBarButtonItem alloc] initWithCustomView:view];
 }
 
-+ (instancetype)yx_itemWithtitle:(NSString *)title normalColor:(UIColor *)normalColor highlightColor:(UIColor *)highlightColor target:(id)target action:(SEL)action
++ (instancetype)byx_itemWithtitle:(NSString *)title normalColor:(UIColor *)normalColor highlightColor:(UIColor *)highlightColor target:(id)target action:(SEL)action
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 40, 40);
