@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSString (Category)
+@interface NSString (BYXSize)
 
 /**
  * @biref 计算文字高度
