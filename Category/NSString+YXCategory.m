@@ -9,7 +9,7 @@
 #import "NSString+YXCategory.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (Category)
+@implementation NSString (BYXSize)
 
 - (CGFloat)yx_stringHeightWithFontSize:(CGFloat)fontSize width:(CGFloat)width
 {
