@@ -36,7 +36,7 @@ static void *byx_zlibOpen()
 {
     if (![self length]) return [self copy];
     NSMutableData *outData = [NSMutableData data];
-    [self jk_deflate:^(NSData *toAppend) {
+    [self byx_deflate:^(NSData *toAppend) {
         [outData appendData:toAppend];
     }
             error:error];
