@@ -191,11 +191,11 @@ static void *byx_zlibOpen()
 - (BOOL)byx_writeInflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error
 {
-    NSFileHandle *f = jk_createOrOpenFileAtPath(path, error);
+    NSFileHandle *f = byx_createOrOpenFileAtPath(path, error);
     if (!f) return NO;
     BOOL success = YES;
     if ([self length]) {
-        success = [self jk_inflate:
+        success = [self byx_inflate:
                    ^(NSData *toAppend) {
                        [f writeData:toAppend];
                    }
@@ -207,15 +207,15 @@ static void *byx_zlibOpen()
     return success;
 }
 
-static NSFileHandle *jk_createOrOpenFileAtPath(NSString *path, NSError *__autoreleasing *error)
+static NSFileHandle *byx_createOrOpenFileAtPath(NSString *path, NSError *__autoreleasing *error)
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         BOOL success = [[NSFileManager defaultManager] createFileAtPath:path
                                                                contents:nil
                                                              attributes:nil];
         if (!success) {
-            if (error) *error = [NSError errorWithDomain:JKZlibErrorDomain
-                                                    code:JKZlibErrorCodeCouldNotCreateFileError
+            if (error) *error = [NSError errorWithDomain:BYXZlibErrorDomain
+                                                    code:BYXZlibErrorCodeCouldNotCreateFileError
                                                 userInfo:nil];
             return nil;
         }
