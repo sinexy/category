@@ -155,9 +155,9 @@ static void *byx_zlibOpen()
             stream.next_out = out;
             ret = deflate(&stream, flush);
             if (ret == Z_STREAM_ERROR) {
-                if (error) *error = [NSError errorWithDomain:JKZlibErrorDomain
-                                                        code:JKZlibErrorCodeDeflationError
-                                                    userInfo:@{JKZlibErrorInfoKey : @(ret)}];
+                if (error) *error = [NSError errorWithDomain:BYXZlibErrorDomain
+                                                        code:BYXZlibErrorCodeDeflationError
+                                                    userInfo:@{BYXZlibErrorInfoKey : @(ret)}];
                 return NO;
             }
             processBlock([NSData dataWithBytesNoCopy:out
@@ -169,14 +169,14 @@ static void *byx_zlibOpen()
     return YES;
 }
 
-- (BOOL)jk_writeDeflatedToFile:(NSString *)path
+- (BOOL)byx_writeDeflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error
 {
-    NSFileHandle *f = jk_createOrOpenFileAtPath(path, error);
+    NSFileHandle *f = byx_createOrOpenFileAtPath(path, error);
     if (!f) return NO;
     BOOL success = YES;
     if ([self length]) {
-        success = [self jk_deflate:
+        success = [self byx_deflate:
                    ^(NSData *toAppend) {
                        [f writeData:toAppend];
                    }
@@ -188,7 +188,7 @@ static void *byx_zlibOpen()
     return success;
 }
 
-- (BOOL)jk_writeInflatedToFile:(NSString *)path
+- (BOOL)byx_writeInflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error
 {
     NSFileHandle *f = jk_createOrOpenFileAtPath(path, error);
