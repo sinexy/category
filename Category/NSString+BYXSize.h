@@ -16,39 +16,39 @@
  * @param width 控件宽度
  * @return 控件高度
  */
-- (CGFloat)yx_stringHeightWithFontSize:(CGFloat)fontSize width:(CGFloat)width;
+- (CGFloat)byx_stringHeightWithFontSize:(CGFloat)fontSize width:(CGFloat)width;
 
 /**
  * @biref 计算文字高度
  * @param width 控件宽度
  * @return 控件高度
  */
-- (CGFloat)yx_stringHeightWithFont:(UIFont *)font width:(CGFloat)width;
+- (CGFloat)byx_stringHeightWithFont:(UIFont *)font width:(CGFloat)width;
 
 /** 判断是否未数字（可以是小数）*/
-- (BOOL)yx_isNumber;
+- (BOOL)byx_isNumber;
 
 /** 身份证号码格式校验 */
-- (BOOL)yx_isIdentification;
+- (BOOL)byx_isIdentification;
 
 /** 手机号码校验 */
-- (BOOL)yx_isPhoneNumber;
+- (BOOL)byx_isPhoneNumber;
 
 /** 去除字符串中的空格 */
-- (instancetype)yx_stringWithNoSpaceCharacterSet;
+- (instancetype)byx_stringWithNoSpaceCharacterSet;
 
 // 将不完整的base64 转为完整的
-- (instancetype)yx_stringPaddedForBase64;
+- (instancetype)byx_stringPaddedForBase64;
 
 
 /** 32位小写加密 */
-- (instancetype)yx_md532BitLower;
+- (instancetype)byx_md532BitLower;
 /** 32位大写加密 */
-- (instancetype)yx_md532BitUpper;
+- (instancetype)byx_md532BitUpper;
 /** 时间戳转年月日*/
-- (instancetype)yx_timeStampString2Date;
+- (instancetype)byx_timeStampString2Date;
 /** 时间戳转年月日时分秒*/
-- (NSString *)yx_timeStampString2Time;
+- (NSString *)byx_timeStampString2Time;
 
 
 @end
