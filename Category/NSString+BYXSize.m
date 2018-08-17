@@ -11,20 +11,20 @@
 
 @implementation NSString (BYXSize)
 
-- (CGFloat)yx_stringHeightWithFontSize:(CGFloat)fontSize width:(CGFloat)width
+- (CGFloat)byx_stringHeightWithFontSize:(CGFloat)fontSize width:(CGFloat)width
 {
     UIFont *font = [UIFont systemFontOfSize:fontSize];
     CGRect rect = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
     return rect.size.height;
 }
 
-- (CGFloat)yx_stringHeightWithFont:(UIFont *)font width:(CGFloat)width
+- (CGFloat)byx_stringHeightWithFont:(UIFont *)font width:(CGFloat)width
 {
     CGRect rect = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
     return rect.size.height;
 }
 
-- (BOOL)yx_isNumber
+- (BOOL)byx_isNumber
 {
     if (self.length == 0) {
         return NO;
@@ -37,7 +37,7 @@
     return NO;
 }
 
-- (BOOL)yx_isIdentification
+- (BOOL)byx_isIdentification
 {
     if (self.length == 0) {
         return NO;
@@ -50,7 +50,7 @@
     return NO;
 }
 
-- (BOOL)yx_isPhoneNumber
+- (BOOL)byx_isPhoneNumber
 {
     NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|70)\\d{8}$";
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
@@ -64,13 +64,13 @@
     return str;
 }
 
-- (instancetype)yx_stringPaddedForBase64
+- (instancetype)byx_stringPaddedForBase64
 {
     NSUInteger paddedLength = self.length + (self.length % 3);
     return [self stringByPaddingToLength:paddedLength withString:@"=" startingAtIndex:0];
 }
 
-- (instancetype)yx_md532BitLower
+- (instancetype)byx_md532BitLower
 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
@@ -87,7 +87,7 @@
              ] lowercaseString];
 }
 
-- (instancetype)yx_md532BitUpper
+- (instancetype)byx_md532BitUpper
 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
@@ -104,7 +104,7 @@
              ] uppercaseString];
 }
 
-- (instancetype)yx_timeStampString2Date
+- (instancetype)byx_timeStampString2Date
 {
     // iOS 生成的时间戳是10位
     NSTimeInterval interval    = [self doubleValue] / 1000.0;
