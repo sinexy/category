@@ -8,7 +8,7 @@
 
 #import "NSDate+YXCategory.h"
 
-@implementation NSDate (YXCategory)
+@implementation NSDate (BYXCalendar)
 /**
  * 获取两个时间的天数差
  @param firstDate 第一个时间

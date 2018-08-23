@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (YXCategory)
+@interface NSDate (BYXCalendar)
 
 /**
  * 获取两个时间的天数差
