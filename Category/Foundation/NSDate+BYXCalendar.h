@@ -16,17 +16,17 @@
  @param secondDate 第二个时间
  @return 比较得出的天数差
  */
-+ (NSInteger)yx_getDateFormDate:(NSDate *)firstDate toDate:(NSDate *)secondDate;
++ (NSInteger)byx_getDateFormDate:(NSDate *)firstDate toDate:(NSDate *)secondDate;
 
 
-+ (NSInteger)yx_getDateToDateDays:(NSDate *)firstDate withSaveDate:(NSDate *)secondDate;
++ (NSInteger)byx_getDateToDateDays:(NSDate *)firstDate withSaveDate:(NSDate *)secondDate;
 /**
  * 获取当前年月日
  */
-+ (NSString *)yx_getCurrentYearMonthDay;
++ (NSString *)byx_getCurrentYearMonthDay;
 /**
  * 获取当前时间戳
  */
-+ (NSString *)yx_getNowTimeTimestamp;
++ (NSString *)byx_getNowTimeTimestamp;
 
 @end
