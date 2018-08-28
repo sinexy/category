@@ -15,13 +15,13 @@
  @param secondDate 第二个时间
  @return 比较得出的天数差
  */
-+ (NSInteger)yx_getDateFormDate:(NSDate *)firstDate toDate:(NSDate *)secondDate {
++ (NSInteger)byx_getDateFormDate:(NSDate *)firstDate toDate:(NSDate *)secondDate {
     NSUInteger dii = abs([secondDate timeIntervalSince1970] - [firstDate timeIntervalSince1970]);
     NSInteger diffDay = dii/(60*60*24);
     return diffDay;
 }
 
-+ (NSInteger)yx_getDateToDateDays:(NSDate *)firstDate withSaveDate:(NSDate *)secondDate {
++ (NSInteger)byx_getDateToDateDays:(NSDate *)firstDate withSaveDate:(NSDate *)secondDate {
     NSCalendar* chineseClendar  = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSUInteger unitFlags        = NSCalendarUnitYear | NSCalendarUnitMinute |
     NSCalendarUnitSecond | NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
@@ -30,7 +30,7 @@
     return diffDay;
 }
 
-+ (NSString *)yx_getCurrentYearMonthDay
++ (NSString *)byx_getCurrentYearMonthDay
 {
     NSDate *date               = [NSDate date];
     
@@ -41,7 +41,7 @@
     return dateString;
 }
 
-+ (NSString *)yx_getNowTimeTimestamp{
++ (NSString *)byx_getNowTimeTimestamp{
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval a=[dat timeIntervalSince1970];
     NSString*timeString = [NSString stringWithFormat:@"%0.f", a];//转为字符型
