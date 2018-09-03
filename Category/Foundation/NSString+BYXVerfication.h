@@ -10,21 +10,6 @@
 
 @interface NSString (BYXVerfication)
 
-/**
- * @biref 计算文字高度
- * @param fontSize 文字大小
- * @param width 控件宽度
- * @return 控件高度
- */
-- (CGFloat)byx_stringHeightWithFontSize:(CGFloat)fontSize width:(CGFloat)width;
-
-/**
- * @biref 计算文字高度
- * @param width 控件宽度
- * @return 控件高度
- */
-- (CGFloat)byx_stringHeightWithFont:(UIFont *)font width:(CGFloat)width;
-
 /** 判断是否未数字（可以是小数）*/
 - (BOOL)byx_isNumber;
 
