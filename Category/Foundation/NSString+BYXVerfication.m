@@ -11,18 +11,6 @@
 
 @implementation NSString (BYXSize)
 
-- (CGFloat)byx_stringHeightWithFontSize:(CGFloat)fontSize width:(CGFloat)width
-{
-    UIFont *font = [UIFont systemFontOfSize:fontSize];
-    CGRect rect = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
-    return rect.size.height;
-}
-
-- (CGFloat)byx_stringHeightWithFont:(UIFont *)font width:(CGFloat)width
-{
-    CGRect rect = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
-    return rect.size.height;
-}
 
 - (BOOL)byx_isNumber
 {
