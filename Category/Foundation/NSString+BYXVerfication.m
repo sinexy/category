@@ -9,7 +9,7 @@
 #import "NSString+YXCategory.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (BYXSize)
+@implementation NSString (BYXVerfication)
 
 
 - (BOOL)byx_isNumber
