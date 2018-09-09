@@ -6,7 +6,7 @@
 //  Copyright © 2018年 yunxin bai. All rights reserved.
 //
 
-#import "NSString+YXCategory.h"
+#import "NSString+BYXVerfication.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (BYXVerfication)
