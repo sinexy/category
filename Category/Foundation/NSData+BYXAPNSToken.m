@@ -6,9 +6,9 @@
 //  Copyright © 2015年 www.skyfox.org. All rights reserved.
 //
 
-#import "NSData+JKAPNSToken.h"
+#import "NSData+BYXAPNSToken.h"
 
-@implementation NSData (JKAPNSToken)
+@implementation NSData (BYXAPNSToken)
 /**
  *  @brief  将APNS NSData类型token 格式化成字符串
  *
