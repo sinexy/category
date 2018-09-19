@@ -1,9 +1,8 @@
 //
-//  NSData+JKAPNSToken.h
-//  JKCategories
+//  NSData+BYXAPNSToken.h
+//  BYXCategories
 //
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
+//  Created by bai on 15/8/7.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,5 +13,5 @@
  *
  *  @return 整理过后的字符串token
  */
-- (NSString *)jk_APNSToken;
+- (NSString *)byx_APNSToken;
 @end
