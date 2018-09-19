@@ -1,9 +1,8 @@
 //
-//  NSData+JKAPNSToken.m
-//  JKCategories
+//  NSData+BYXAPNSToken.m
+//  BYXCategories
 //
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
+//  Created by bai on 15/8/7.
 //
 
 #import "NSData+BYXAPNSToken.h"
@@ -14,7 +13,7 @@
  *
  *  @return 字符串token
  */
-- (NSString *)jk_APNSToken {
+- (NSString *)byx_APNSToken {
     return [[[[self description]
               stringByReplacingOccurrencesOfString: @"<" withString: @""]
              stringByReplacingOccurrencesOfString: @">" withString: @""]
