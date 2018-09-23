@@ -1,16 +1,10 @@
-//
-//  NSData+JKBase64.m
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
-//
-//  Created by Jakey on 15/1/26.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
-//
 
-#import "NSData+JKBase64.h"
+
+#import "NSData+BYXBase64.h"
 #pragma GCC diagnostic ignored "-Wselector"
 #import <Availability.h>
 
-@implementation NSData (JKBase64)
+@implementation NSData (BYXBase64)
 /**
  *  @brief  字符串base64后转data
  *
