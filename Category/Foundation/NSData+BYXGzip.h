@@ -31,7 +31,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@interface NSData (JKGzip)
+@interface NSData (BYXGzip)
 /**
  *  @brief  GZIP压缩
  *
