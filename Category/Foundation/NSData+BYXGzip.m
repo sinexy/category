@@ -12,7 +12,7 @@
 
 @implementation NSData (BYXGzip)
 
-static void *jk_libzOpen()
+static void *byx_libzOpen()
 {
     static void *libz;
     static dispatch_once_t onceToken;
@@ -22,14 +22,14 @@ static void *jk_libzOpen()
     return libz;
 }
 
-- (NSData *)jk_gzippedDataWithCompressionLevel:(float)level
+- (NSData *)byx_gzippedDataWithCompressionLevel:(float)level
 {
-    if (self.length == 0 || [self jk_isGzippedData])
+    if (self.length == 0 || [self byx_isGzippedData])
     {
         return self;
     }
     
-    void *libz = jk_libzOpen();
+    void *libz = byx_libzOpen();
     int (*deflateInit2_)(z_streamp, int, int, int, int, int, const char *, int) =
     (int (*)(z_streamp, int, int, int, int, int, const char *, int))dlsym(libz, "deflateInit2_");
     int (*deflate)(z_streamp, int) = (int (*)(z_streamp, int))dlsym(libz, "deflate");
@@ -68,19 +68,19 @@ static void *jk_libzOpen()
     return output;
 }
 
-- (NSData *)jk_gzippedData
+- (NSData *)byx_gzippedData
 {
-    return [self jk_gzippedDataWithCompressionLevel:-1.0f];
+    return [self byx_gzippedDataWithCompressionLevel:-1.0f];
 }
 
-- (NSData *)jk_gunzippedData
+- (NSData *)byx_gunzippedData
 {
-    if (self.length == 0 || ![self jk_isGzippedData])
+    if (self.length == 0 || ![self byx_isGzippedData])
     {
         return self;
     }
     
-    void *libz = jk_libzOpen();
+    void *libz = byx_libzOpen();
     int (*inflateInit2_)(z_streamp, int, const char *, int) =
     (int (*)(z_streamp, int, const char *, int))dlsym(libz, "inflateInit2_");
     int (*inflate)(z_streamp, int) = (int (*)(z_streamp, int))dlsym(libz, "inflate");
@@ -121,7 +121,7 @@ static void *jk_libzOpen()
     return output;
 }
 
-- (BOOL)jk_isGzippedData
+- (BOOL)byx_isGzippedData
 {
     const UInt8 *bytes = (const UInt8 *)self.bytes;
     return (self.length >= 2 && bytes[0] == 0x1f && bytes[1] == 0x8b);
