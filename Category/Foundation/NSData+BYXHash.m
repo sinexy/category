@@ -8,7 +8,7 @@
 
 #import "NSData+BYXHash.h"
 #include <CommonCrypto/CommonCrypto.h>
-@implementation NSData (JKHash)
+@implementation NSData (BYXHash)
 /**
  *  @brief  md5 NSData
  */
