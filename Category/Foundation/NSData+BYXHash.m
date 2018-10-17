@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
 //
 
-#import "NSData+JKHash.h"
+#import "NSData+BYXHash.h"
 #include <CommonCrypto/CommonCrypto.h>
 @implementation NSData (JKHash)
 /**
