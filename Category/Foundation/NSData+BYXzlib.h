@@ -1,6 +1,6 @@
 
 //https://github.com/bitbasenyc/nsdata-zlib
-@interface NSData (JKzlib)
+@interface NSData (BYXzlib)
 
 /**
  ZLib error domain
