@@ -5,18 +5,18 @@
 /**
  ZLib error domain
  */
-extern NSString *const JKZlibErrorDomain;
+extern NSString *const BYXZlibErrorDomain;
 /**
  When a zlib error occurs, querying this key in the @p userInfo dictionary of the
  @p NSError object will return the underlying zlib error code.
  */
-extern NSString *const JKZlibErrorInfoKey;
+extern NSString *const BYXZlibErrorInfoKey;
 
-typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
-    JKZlibErrorCodeFileTooLarge = 0,
-    JKZlibErrorCodeDeflationError = 1,
-    JKZlibErrorCodeInflationError = 2,
-    JKZlibErrorCodeCouldNotCreateFileError = 3,
+typedef NS_ENUM(NSUInteger, BYXZlibErrorCode) {
+    BYXZlibErrorCodeFileTooLarge = 0,
+    BYXZlibErrorCodeDeflationError = 1,
+    BYXZlibErrorCodeInflationError = 2,
+    BYXZlibErrorCodeCouldNotCreateFileError = 3,
 };
 
 /**
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
  @returns An NSData instance containing the result of applying zlib
  compression to this instance.
  */
-- (NSData *)jk_dataByDeflatingWithError:(NSError *__autoreleasing *)error;
+- (NSData *)byx_dataByDeflatingWithError:(NSError *__autoreleasing *)error;
 
 /**
  Apply zlib decompression.
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
  @returns An NSData instance containing the result of applying zlib
  decompression to this instance.
  */
-- (NSData *)jk_dataByInflatingWithError:(NSError *__autoreleasing *)error;
+- (NSData *)byx_dataByInflatingWithError:(NSError *__autoreleasing *)error;
 
 /**
  Apply zlib compression and write the result to a file at path
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
 
  @returns @p YES if the compression succeeded; otherwise, @p NO.
  */
-- (BOOL)jk_writeDeflatedToFile:(NSString *)path
+- (BOOL)byx_writeDeflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error;
 
 /**
@@ -64,6 +64,6 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
 
  @returns @p YES if the compression succeeded; otherwise, @p NO.
  */
-- (BOOL)jk_writeInflatedToFile:(NSString *)path
+- (BOOL)byx_writeInflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error;
 @end
